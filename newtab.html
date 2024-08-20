@@ -3,14 +3,20 @@
 <head>
   <meta charset="UTF-8">
   <title>Your Life in Circles</title>
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Caveat:wght@400;700&display=swap">
   <link rel="stylesheet" href="newtab.css">
+  <!-- Add Google Fonts -->
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Caveat:wght@400;700&display=swap">
 </head>
 <body id="body">
   <div class="age-container">
-    <span>You are </span><span id="ageDisplay">0</span><span></span>
+    <span>Age: </span><span id="ageDisplay">0</span><span></span>
   </div>
   <div class="container" id="circlesContainer"></div>
+  <div id="popover" class="popover hidden">
+    <div id="popoverTitle" class="popover-title"></div>
+    <textarea id="popoverText" placeholder="Add your note here..."></textarea>
+    <button id="saveNote">Save</button>
+  </div>
   <script src="newtab.js"></script>
 </body>
 </html>
