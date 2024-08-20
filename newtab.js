@@ -117,7 +117,7 @@ chrome.storage.sync.get(['birthdate', 'lifespan', 'bgColor', 'circleColor'], fun
   const birthdate = data.birthdate || '1990-01-01';
   const lifespan = parseInt(data.lifespan || 90, 10);
   const bgColor = data.bgColor || '#F5F4EB';
-  const circleColor = data.circleColor || '#375323';
+  const circleColor = data.circleColor || '#D55B57';
 
   document.getElementById('body').style.backgroundColor = bgColor;
 
