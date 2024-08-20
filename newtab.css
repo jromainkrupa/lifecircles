@@ -1,0 +1,66 @@
+body {
+  font-family: 'Caveat', cursive; /* Apply the sketch-like font */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  margin: 0;
+  background-color: #F5F4EB; /* Default background color */
+  color: #333;
+}
+
+.age-container {
+  font-size: 40px; /* Slightly increased font size for readability */
+  margin-bottom: 20px;
+}
+
+.container {
+  display: grid;
+  grid-template-columns: repeat(10, 40px); /* Adjusted column size */
+  gap: 15px; /* Increased gap between circles */
+}
+
+.circle {
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  background-color: transparent;
+  position: relative;
+  overflow: hidden;
+  border: 2px solid #333;
+  box-shadow: 2px 2px 0 #333, 4px 4px 0 #ddd, -2px -2px 0 #333; /* Rough sketch effect */
+  transform: rotate(calc(var(--random-rotate, 0) * 1deg)) scale(calc(var(--random-scale, 1)));
+  transition: all 0.2s ease-in-out;
+}
+
+.circle:hover {
+  transform: rotate(calc(var(--random-rotate, 0) * 1deg)) scale(calc(var(--random-scale, 1.1)));
+}
+
+.filled {
+  background-color: var(--circle-color, #375323); /* Circle color, defaulting to #375323 */
+  border: 2px solid #333; /* Ensure the border is visible */
+  box-shadow: 2px 2px 0 #333, 4px 4px 0 #ddd, -2px -2px 0 #333; /* Reapply rough sketch effect */
+}
+
+.partial-fill::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: var(--fill-percentage);
+  height: 100%;
+  background-color: var(--circle-color, #375323); /* Apply the circle color */
+  clip-path: inset(0 0 0 0 round 50%); /* Ensures the fill stays within the circle */
+}
+
+.partial-fill {
+  border: 2px solid #333; /* Ensure the border is consistent with other circles */
+  background-color: transparent; /* Make sure background is transparent */
+  box-shadow: 2px 2px 0 #333, 4px 4px 0 #ddd, -2px -2px 0 #333; /* Rough sketch effect */
+}
+
+.partial-fill:hover {
+  transform: rotate(calc(var(--random-rotate, 0) * 1deg)) scale(calc(var(--random-scale, 1.1)));
+}
